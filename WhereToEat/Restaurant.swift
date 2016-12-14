@@ -14,7 +14,7 @@ struct Restaurant {
         case japanese, burger, italian, chinese, vegan
         
         static var allStyles: [Style] {
-            return [japanese, .burger, .italian, .chinese, .vegan]
+            return [.japanese, .burger, .italian, .chinese, .vegan]
         }
     }
     
