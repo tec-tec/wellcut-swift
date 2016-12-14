@@ -143,10 +143,15 @@
                     <connections>
                         <outlet property="addressTextField" destination="Y9j-u5-PcY" id="4hJ-rw-9GT"/>
                         <outlet property="nameTextField" destination="24C-Fj-nlW" id="KlH-yp-Kqj"/>
+                        <outlet property="stylePicker" destination="utx-Fa-pi2" id="cp8-XQ-i7a"/>
                         <outlet property="styleTextField" destination="RH7-O5-I23" id="vff-Si-vXT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pickerView contentMode="scaleToFill" id="utx-Fa-pi2">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                </pickerView>
             </objects>
             <point key="canvasLocation" x="71.200000000000003" y="131.78410794602701"/>
         </scene>

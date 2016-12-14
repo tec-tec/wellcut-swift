@@ -18,12 +18,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var styleTextField: UITextField!
+    @IBOutlet var stylePicker: UIPickerView!
     
     var directory = Directory()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        stylePicker.dataSource = self
+        stylePicker.delegate = self
+        styleTextField.inputView = stylePicker
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,3 +75,21 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Restaurant.Style.allStyles.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Restaurant.Style.allStyles[row].rawValue
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        styleTextField.text = Restaurant.Style.allStyles[row].rawValue
+    }
+}
