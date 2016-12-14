@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     @IBAction func cancel(_ sender: Any) {
     }
     
-    @IBAction func save(_ sender: Any) {
+    @IBAction func save(_ sender: UIButton) {
         
         nameTextField.backgroundColor = UIColor.white
         addressTextField.backgroundColor = UIColor.white
@@ -65,9 +65,11 @@ class ViewController: UIViewController {
             let resto = try restaurantFromForm()
             directory.add(resto)
         } catch FormError.noText(let textField) {
-            textField.backgroundColor = UIColor.red
+            textField.backgroundColor = UIColor.wellcutYellow
         } catch FormError.notEnoughtCharacters (let textField, let minNumbersOfChar){
-            textField.backgroundColor = UIColor.red
+            textField.backgroundColor = UIColor.wellcutYellow
+            textField.shake()
+
             print("\(minNumbersOfChar)")
         } catch {
             

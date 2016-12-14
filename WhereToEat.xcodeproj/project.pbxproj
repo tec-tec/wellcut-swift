@@ -14,6 +14,7 @@
 		3321DB831E0141F6008002B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3321DB811E0141F6008002B3 /* LaunchScreen.storyboard */; };
 		3321DB8B1E01443D008002B3 /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3321DB8A1E01443D008002B3 /* Directory.swift */; };
 		3321DB8D1E014449008002B3 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3321DB8C1E014449008002B3 /* Restaurant.swift */; };
+		33344ECE1E01A1B800779CF3 /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33344ECD1E01A1B800779CF3 /* CommonExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3321DB841E0141F6008002B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3321DB8A1E01443D008002B3 /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		3321DB8C1E014449008002B3 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		33344ECD1E01A1B800779CF3 /* CommonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				3321DB781E0141F6008002B3 /* AppDelegate.swift */,
 				3321DB7A1E0141F6008002B3 /* ViewController.swift */,
 				3321DB7C1E0141F6008002B3 /* Main.storyboard */,
+				33344ECD1E01A1B800779CF3 /* CommonExtensions.swift */,
 				3321DB8A1E01443D008002B3 /* Directory.swift */,
 				3321DB8C1E014449008002B3 /* Restaurant.swift */,
 				3321DB7F1E0141F6008002B3 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33344ECE1E01A1B800779CF3 /* CommonExtensions.swift in Sources */,
 				3321DB8D1E014449008002B3 /* Restaurant.swift in Sources */,
 				3321DB7B1E0141F6008002B3 /* ViewController.swift in Sources */,
 				3321DB791E0141F6008002B3 /* AppDelegate.swift in Sources */,
@@ -310,6 +314,7 @@
 				3321DB891E0141F6008002B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

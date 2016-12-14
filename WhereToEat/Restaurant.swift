@@ -49,3 +49,13 @@ struct Restaurant {
         self.lastVisit = lastVisit
     }
 }
+
+extension Restaurant: Equatable {
+    
+    static func ==(lhs: Restaurant, rhs: Restaurant) -> Bool {
+        if lhs.name == rhs.name && lhs.address == rhs.address {
+            return true
+        }
+        return false
+    }
+}
