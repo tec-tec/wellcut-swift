@@ -10,8 +10,12 @@ import Foundation
 
 struct Restaurant {
     
-    enum Style {
+    enum Style: String {
         case japanese, burger, italian, chinese, vegan
+        
+        static var allStyles: [Style] {
+            return [japanese, .burger, .italian, .chinese, .vegan]
+        }
     }
     
     enum Specificities {
@@ -31,10 +35,10 @@ struct Restaurant {
     var mediumPrice: Int?
     var specificities: Set<Specificities>
     
-    var openingHours: [WeekDay : OpeningHours]
+    var openingHours: [WeekDay : [OpeningHours]]
     var lastVisit: Date?
     
-    init(name: String, address: String, style: Style? = nil, grade: Float? = nil, mediumPrice: Int? = nil, specificities: Set<Specificities> = [], openingHours: [WeekDay : OpeningHours] = [:], lastVisit: Date? = nil) {
+    init(name: String, address: String, style: Style? = nil, grade: Float? = nil, mediumPrice: Int? = nil, specificities: Set<Specificities> = [], openingHours: [WeekDay : [OpeningHours]] = [:], lastVisit: Date? = nil) {
         self.name = name
         self.address = address
         self.style = style
