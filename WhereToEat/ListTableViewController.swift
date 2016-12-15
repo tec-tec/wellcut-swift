@@ -21,7 +21,19 @@ class ListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("DidLoad")
+        
+        let notCenter = NotificationCenter.default        
+        notCenter.addObserver(self, selector: #selector(reload), name: Notification.Name("modelUpdated"), object: nil)
+        
+//        weak var weakSelf = self
+//        notCenter.addObserver(forName: Notification.Name("modelUpdated"), object: nil, queue: nil) { (note) in
+//            weakSelf?.tableView.reloadData()
+//        }
+    }
+    
+    func reload() {
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

@@ -20,6 +20,9 @@ class Directory {
     
     func add(_ resto: Restaurant) {
         restaurants.append(resto)
+        
+        let notifCenter = NotificationCenter.default
+        notifCenter.post(name: Notification.Name("modelUpdated"), object: nil)
     }
     
     func remove(_ resto: Restaurant) {
