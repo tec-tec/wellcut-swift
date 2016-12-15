@@ -17,6 +17,7 @@
 		33344ECE1E01A1B800779CF3 /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33344ECD1E01A1B800779CF3 /* CommonExtensions.swift */; };
 		33344ED01E02B0AE00779CF3 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33344ECF1E02B0AE00779CF3 /* ListTableViewController.swift */; };
 		33AA05491E02E41300EDE67B /* RestoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AA05481E02E41300EDE67B /* RestoDetailsViewController.swift */; };
+		33AA054B1E02F7CD00EDE67B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AA054A1E02F7CD00EDE67B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		33344ECD1E01A1B800779CF3 /* CommonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtensions.swift; sourceTree = "<group>"; };
 		33344ECF1E02B0AE00779CF3 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		33AA05481E02E41300EDE67B /* RestoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoDetailsViewController.swift; sourceTree = "<group>"; };
+		33AA054A1E02F7CD00EDE67B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				3321DB781E0141F6008002B3 /* AppDelegate.swift */,
 				33344ECD1E01A1B800779CF3 /* CommonExtensions.swift */,
+				33AA054A1E02F7CD00EDE67B /* Constants.swift */,
 				3321DB7C1E0141F6008002B3 /* Main.storyboard */,
 				33344ED21E02B14E00779CF3 /* Controllers */,
 				33344ED11E02B14300779CF3 /* Models */,
@@ -175,6 +178,7 @@
 				3321DB791E0141F6008002B3 /* AppDelegate.swift in Sources */,
 				3321DB8B1E01443D008002B3 /* Directory.swift in Sources */,
 				33AA05491E02E41300EDE67B /* RestoDetailsViewController.swift in Sources */,
+				33AA054B1E02F7CD00EDE67B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
