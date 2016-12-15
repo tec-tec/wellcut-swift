@@ -10,9 +10,11 @@ import Foundation
 
 class Directory {
     
+    static let shared = Directory()
+    
     private var restaurants: [Restaurant]
     
-    init() {
+    private init() {
         restaurants = []
     }
     

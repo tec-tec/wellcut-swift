@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lastVisitDateButton: UIButton!
     @IBOutlet weak var lastVisitStackView: UIStackView!
     
-    var directory = Directory()
+    var directory = Directory.shared
     private var lastVisit: Date?
     private lazy var dateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -71,6 +71,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func save(_ sender: UIButton) {
@@ -81,6 +82,7 @@ class ViewController: UIViewController {
         do {
             let resto = try restaurantFromForm()
             directory.add(resto)
+            dismiss(animated: true, completion: nil)
         } catch FormError.noText(let textField) {
             textField.backgroundColor = UIColor.wellcutYellow
         } catch FormError.notEnoughtCharacters (let textField, let minNumbersOfChar){
