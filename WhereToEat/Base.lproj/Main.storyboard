@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3oi-hT-LP0">
-                                <rect key="frame" x="16" y="58" width="343" height="325.5"/>
+                                <rect key="frame" x="16" y="58" width="343" height="579.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CbC-oc-duO">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="58.5"/>
@@ -82,8 +82,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zCt-v7-9B7">
                                         <rect key="frame" x="0.0" y="199.5" width="343" height="59.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Déjà visité ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXE-Kb-6g7">
-                                                <rect key="frame" x="0.0" y="0.0" width="91.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already visited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXE-Kb-6g7">
+                                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -128,6 +128,38 @@
                                             </stackView>
                                         </subviews>
                                         <variation key="heightClass=compact" axis="horizontal"/>
+                                    </stackView>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lOp-yB-uvl">
+                                        <rect key="frame" x="0.0" y="333.5" width="343" height="246"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4CG-X2-q4k">
+                                                <rect key="frame" x="0.0" y="0.0" width="194" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jG4-zP-C7S">
+                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNI-cj-Iyz">
+                                                        <rect key="frame" x="76" y="0.0" width="118" height="30"/>
+                                                        <state key="normal" title="Set last visit date"/>
+                                                        <connections>
+                                                            <action selector="toggleDatePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vGF-rn-RcA"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hSl-a7-9kT">
+                                                <rect key="frame" x="0.0" y="30" width="320" height="216"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="503486314.77546602">
+                                                    <!--2016-12-15 09:18:34 +0000-->
+                                                </date>
+                                                <connections>
+                                                    <action selector="lastVisitDateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Pcy-oz-SpM"/>
+                                                </connections>
+                                            </datePicker>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -178,7 +210,10 @@
                     <connections>
                         <outlet property="addressTextField" destination="Y9j-u5-PcY" id="4hJ-rw-9GT"/>
                         <outlet property="alreadyVisitedSwitch" destination="qiy-t9-nRx" id="0RN-f0-MDD"/>
+                        <outlet property="datePicker" destination="hSl-a7-9kT" id="vMu-AK-2qN"/>
                         <outlet property="gradeSlider" destination="CvJ-AK-9OO" id="C9L-0j-cGO"/>
+                        <outlet property="lastVisitDateButton" destination="kNI-cj-Iyz" id="A1G-ez-goc"/>
+                        <outlet property="lastVisitStackView" destination="lOp-yB-uvl" id="YWb-BD-olJ"/>
                         <outlet property="nameTextField" destination="24C-Fj-nlW" id="KlH-yp-Kqj"/>
                         <outlet property="noteLabel" destination="Tqc-dV-5M4" id="co2-E5-hJp"/>
                         <outlet property="noteStackView" destination="38D-Tf-kGv" id="nrV-8L-1Qz"/>

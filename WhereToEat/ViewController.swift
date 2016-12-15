@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var alreadyVisitedSwitch: UISwitch!
     @IBOutlet weak var noteStackView: UIStackView!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var lastVisitDateButton: UIButton!
+    @IBOutlet weak var lastVisitStackView: UIStackView!
     
     var directory = Directory()
     
@@ -31,6 +34,7 @@ class ViewController: UIViewController {
         stylePicker.dataSource = self
         stylePicker.delegate = self
         styleTextField.inputView = stylePicker
+        datePicker.maximumDate = Date()
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,6 +95,15 @@ class ViewController: UIViewController {
     
     @IBAction func alreadyVisitedSwitchValueChanged(_ sender: UISwitch) {
         noteStackView.isHidden = !sender.isOn
+        lastVisitStackView.isHidden = !sender.isOn
+    }
+    
+    @IBAction func toggleDatePicker(_ sender: UIButton) {
+        datePicker.isHidden = !datePicker.isHidden
+    }
+    
+    @IBAction func lastVisitDateChanged(_ sender: UIDatePicker) {
+        lastVisitDateButton.setTitle("\(sender.date)", for: .normal)
     }
 }
 
