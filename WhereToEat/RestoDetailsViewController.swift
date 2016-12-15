@@ -10,14 +10,19 @@ import UIKit
 
 class RestoDetailsViewController: UIViewController {
 
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     
     var displayedRestaurant: Restaurant?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        testLabel.text = displayedRestaurant?.name
+        guard let resto = displayedRestaurant else {
+            fatalError("No restaurant!")
+        }
+        
+        title = resto.name
+        addressLabel.text = resto.address
     }
 
     override func didReceiveMemoryWarning() {

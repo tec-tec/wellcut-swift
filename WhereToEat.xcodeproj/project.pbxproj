@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33141DC21E03045800602B1B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33141DC11E03045800602B1B /* MapKit.framework */; };
 		3321DB791E0141F6008002B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3321DB781E0141F6008002B3 /* AppDelegate.swift */; };
 		3321DB7B1E0141F6008002B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3321DB7A1E0141F6008002B3 /* ViewController.swift */; };
 		3321DB7E1E0141F6008002B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3321DB7C1E0141F6008002B3 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33141DC11E03045800602B1B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3321DB751E0141F6008002B3 /* WhereToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3321DB781E0141F6008002B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3321DB7A1E0141F6008002B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,17 +43,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33141DC21E03045800602B1B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33141DC01E03045800602B1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33141DC11E03045800602B1B /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3321DB6C1E0141F6008002B3 = {
 			isa = PBXGroup;
 			children = (
 				3321DB771E0141F6008002B3 /* WhereToEat */,
 				3321DB761E0141F6008002B3 /* Products */,
+				33141DC01E03045800602B1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +144,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = A7SGM6JEMA;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
