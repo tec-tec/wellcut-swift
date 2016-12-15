@@ -55,4 +55,21 @@ class ListTableViewController: UITableViewController {
         
         return cell
     }
+    
+    // MARK: - Table view cell deletion
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            let currentResto = directory.allRestaurants[indexPath.row]
+            directory.remove(currentResto)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        default:
+            break
+        }
+    }
 }

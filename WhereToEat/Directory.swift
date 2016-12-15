@@ -20,6 +20,11 @@ class Directory {
         restaurants.append(resto)
     }
     
+    func remove(_ resto: Restaurant) {
+        guard let index = restaurants.index(of: resto) else { return }
+        restaurants.remove(at: index)
+    }
+    
     var allRestaurants: [Restaurant] {
         return restaurants
     }
