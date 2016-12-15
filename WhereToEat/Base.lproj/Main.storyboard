@@ -44,7 +44,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <connections>
-                                    <segue destination="sVx-fD-qtO" kind="show" id="z28-r1-A6r"/>
+                                    <segue destination="sVx-fD-qtO" kind="show" identifier="showDetails" id="z28-r1-A6r"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="adCell" id="4O9-Xh-v5S">
@@ -65,7 +65,7 @@
                     <navigationItem key="navigationItem" title="Restos" id="eWO-nh-HCW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="n7I-Hc-PzW">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="vld-Yt-fUm"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="showForm" id="vld-Yt-fUm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -315,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="3062" y="132"/>
         </scene>
-        <!--View Controller-->
+        <!--Resto Details View Controller-->
         <scene sceneID="dJL-ra-mMq">
             <objects>
-                <viewController id="sVx-fD-qtO" sceneMemberID="viewController">
+                <viewController id="sVx-fD-qtO" customClass="RestoDetailsViewController" customModule="WhereToEat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zmh-zx-tTR"/>
                         <viewControllerLayoutGuide type="bottom" id="CCx-UQ-iLv"/>
@@ -340,6 +340,9 @@
                             <constraint firstItem="8BM-Y6-4OD" firstAttribute="centerY" secondItem="zUD-ZV-FAs" secondAttribute="centerY" id="TAU-Ts-L7x"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="testLabel" destination="8BM-Y6-4OD" id="niT-sd-Abw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYe-dL-Bt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -448,7 +451,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ce3-45-j3g"/>
-        <segue reference="1Mx-e1-CSV"/>
+        <segue reference="z28-r1-A6r"/>
+        <segue reference="vld-Yt-fUm"/>
     </inferredMetricsTieBreakers>
 </document>

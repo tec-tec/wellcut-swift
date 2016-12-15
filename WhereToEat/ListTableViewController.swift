@@ -72,4 +72,18 @@ class ListTableViewController: UITableViewController {
             break
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showForm" {
+            
+        } else if segue.identifier == "showDetails" {
+            guard let destination = segue.destination as? RestoDetailsViewController else { return }
+            guard let cell = sender as? UITableViewCell else { return }
+            guard let indexPath = tableView.indexPath(for: cell) else { return }
+            let resto = directory.allRestaurants[indexPath.row]
+            
+            destination.displayedRestaurant = resto
+        }
+    }
 }
