@@ -28,6 +28,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var lastVisitStackView: UIStackView!
     
     var directory = Directory()
+    lazy var dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "MM/dd/yyyy"
+        return df
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +108,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func lastVisitDateChanged(_ sender: UIDatePicker) {
-        lastVisitDateButton.setTitle("\(sender.date)", for: .normal)
+        let dateString = dateFormatter.string(from: sender.date)
+        lastVisitDateButton.setTitle(dateString, for: .normal)
     }
 }
 
