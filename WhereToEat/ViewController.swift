@@ -28,7 +28,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lastVisitStackView: UIStackView!
     
     var directory = Directory()
-    lazy var dateFormatter: DateFormatter = {
+    private var lastVisit: Date?
+    private lazy var dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "MM/dd/yyyy"
         return df
@@ -62,7 +63,7 @@ class ViewController: UIViewController {
             throw FormError.notEnoughtCharacters(textField: addressTextField, minNumbersOfChar: 2)
         }
         
-        var resto = Restaurant(name: name, address: address)
+        var resto = Restaurant(name: name, address: address, lastVisit: lastVisit)
         if alreadyVisitedSwitch.isOn {
             resto.grade = gradeSlider.value
         }
@@ -108,7 +109,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func lastVisitDateChanged(_ sender: UIDatePicker) {
-        let dateString = dateFormatter.string(from: sender.date)
+        lastVisit = sender.date
+        let dateString = dateFormatter.string(from: lastVisit!)
         lastVisitDateButton.setTitle(dateString, for: .normal)
     }
     
