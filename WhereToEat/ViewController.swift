@@ -111,6 +111,10 @@ class ViewController: UIViewController {
         let dateString = dateFormatter.string(from: sender.date)
         lastVisitDateButton.setTitle(dateString, for: .normal)
     }
+    
+    @IBAction func scrollViewTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(false)
+    }
 }
 
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
