@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var styleTextField: UITextField!
     @IBOutlet var stylePicker: UIPickerView!
+    @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var gradeSlider: UISlider!
+    @IBOutlet weak var alreadyVisitedSwitch: UISwitch!
+    @IBOutlet weak var noteStackView: UIStackView!
     
     var directory = Directory()
     
@@ -49,7 +53,10 @@ class ViewController: UIViewController {
             throw FormError.notEnoughtCharacters(textField: addressTextField, minNumbersOfChar: 2)
         }
         
-        let resto = Restaurant(name: name, address: address)
+        var resto = Restaurant(name: name, address: address)
+        if alreadyVisitedSwitch.isOn {
+            resto.grade = gradeSlider.value
+        }
         return resto
     }
 
@@ -74,6 +81,16 @@ class ViewController: UIViewController {
         } catch {
             
         }
+    }
+    
+    @IBAction func noteValueChanged(_ sender: UISlider) {
+        let intNote = Int(sender.value)
+        sender.value = Float(intNote)
+        noteLabel.text = "\(intNote)"
+    }
+    
+    @IBAction func alreadyVisitedSwitchValueChanged(_ sender: UISwitch) {
+        noteStackView.isHidden = !sender.isOn
     }
 }
 
