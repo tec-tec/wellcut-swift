@@ -31,8 +31,11 @@ class Directory {
     }
     
     func remove(_ resto: Restaurant) {
-        guard let index = restaurants.index(of: resto) else { return }
-        restaurants.remove(at: index)
+        let fetchRequest: NSFetchRequest<CDRestaurant> = CDRestaurant.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "name == %@ && address == %@", resto.name, resto.address)
+        guard let results = try? persistentContainer.viewContext.fetch(fetchRequest), results.count == 1 else { return }
+        persistentContainer.viewContext.delete(results.first!)
+        saveContext()
     }
     
     var allRestaurants: [Restaurant] {
@@ -51,9 +54,10 @@ class Directory {
     }
     
     var randomRestaurant: Restaurant? {
-        guard !restaurants.isEmpty else { return nil }
-        let index = Int(arc4random_uniform(UInt32(restaurants.count)))
-        return restaurants[index]
+        let restos = allRestaurants
+        guard !restos.isEmpty else { return nil }
+        let index = Int(arc4random_uniform(UInt32(restos.count)))
+        return restos[index]
     }
     
     // MARK: - Core Data stack
