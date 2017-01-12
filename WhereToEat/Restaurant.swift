@@ -48,6 +48,15 @@ struct Restaurant {
         self.openingHours = openingHours
         self.lastVisit = lastVisit
     }
+    
+    func saveToDisk(data: Data) {
+        
+        let fileManager = FileManager.default
+        
+        let urlArray = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+        
+        try? data.write(to: urlArray!)
+    }
 }
 
 extension Restaurant: Equatable {

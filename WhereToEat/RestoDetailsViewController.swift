@@ -26,6 +26,7 @@ class RestoDetailsViewController: UIViewController {
         
         let prefs = UserDefaults.standard
         prefs.set(displayedRestaurant?.name, forKey: Constants.UserDefaultsKeys.lastResto)
+        displayedRestaurant?.saveToDisk(data: Data())
     }
 
     override func didReceiveMemoryWarning() {
