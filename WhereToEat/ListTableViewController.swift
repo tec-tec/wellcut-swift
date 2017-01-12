@@ -52,8 +52,6 @@ class ListTableViewController: UITableViewController {
         let cell: UITableViewCell
 
         switch indexPath.row {
-        case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: "adCell", for: indexPath)
         default:
             cell = tableView.dequeueReusableCell(withIdentifier: "restoCell", for: indexPath)
             if indexPath.row == 10 {

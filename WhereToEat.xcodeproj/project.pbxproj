@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330E51E31E27CEB300DF10B8 /* CDRestaurant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E51E11E27CEB300DF10B8 /* CDRestaurant+CoreDataClass.swift */; };
+		330E51E41E27CEB300DF10B8 /* CDRestaurant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330E51E21E27CEB300DF10B8 /* CDRestaurant+CoreDataProperties.swift */; };
 		33141DC21E03045800602B1B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33141DC11E03045800602B1B /* MapKit.framework */; };
 		3321DB791E0141F6008002B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3321DB781E0141F6008002B3 /* AppDelegate.swift */; };
 		3321DB7B1E0141F6008002B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3321DB7A1E0141F6008002B3 /* ViewController.swift */; };
@@ -18,11 +20,14 @@
 		33344ECE1E01A1B800779CF3 /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33344ECD1E01A1B800779CF3 /* CommonExtensions.swift */; };
 		33344ED01E02B0AE00779CF3 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33344ECF1E02B0AE00779CF3 /* ListTableViewController.swift */; };
 		338A9DB61E279EAE00AB9B78 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338A9DB51E279EAE00AB9B78 /* CloudKit.framework */; };
+		338A9DDA1E27C13D00AB9B78 /* WhereToEat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 338A9DD81E27C13D00AB9B78 /* WhereToEat.xcdatamodeld */; };
 		33AA05491E02E41300EDE67B /* RestoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AA05481E02E41300EDE67B /* RestoDetailsViewController.swift */; };
 		33AA054B1E02F7CD00EDE67B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AA054A1E02F7CD00EDE67B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330E51E11E27CEB300DF10B8 /* CDRestaurant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDRestaurant+CoreDataClass.swift"; sourceTree = "<group>"; };
+		330E51E21E27CEB300DF10B8 /* CDRestaurant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDRestaurant+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		33141DC11E03045800602B1B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3321DB751E0141F6008002B3 /* WhereToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3321DB781E0141F6008002B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 		33344ECF1E02B0AE00779CF3 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		338A9DB41E279E9E00AB9B78 /* WhereToEat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhereToEat.entitlements; sourceTree = "<group>"; };
 		338A9DB51E279EAE00AB9B78 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		338A9DD91E27C13D00AB9B78 /* WhereToEat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WhereToEat.xcdatamodel; sourceTree = "<group>"; };
 		33AA05481E02E41300EDE67B /* RestoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoDetailsViewController.swift; sourceTree = "<group>"; };
 		33AA054A1E02F7CD00EDE67B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,8 +106,11 @@
 		33344ED11E02B14300779CF3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				330E51E11E27CEB300DF10B8 /* CDRestaurant+CoreDataClass.swift */,
+				330E51E21E27CEB300DF10B8 /* CDRestaurant+CoreDataProperties.swift */,
 				3321DB8A1E01443D008002B3 /* Directory.swift */,
 				3321DB8C1E014449008002B3 /* Restaurant.swift */,
+				338A9DD81E27C13D00AB9B78 /* WhereToEat.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -143,7 +152,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Ludovic Ollagnier";
 				TargetAttributes = {
 					3321DB741E0141F6008002B3 = {
@@ -205,7 +214,10 @@
 				3321DB7B1E0141F6008002B3 /* ViewController.swift in Sources */,
 				33344ED01E02B0AE00779CF3 /* ListTableViewController.swift in Sources */,
 				3321DB791E0141F6008002B3 /* AppDelegate.swift in Sources */,
+				338A9DDA1E27C13D00AB9B78 /* WhereToEat.xcdatamodeld in Sources */,
+				330E51E31E27CEB300DF10B8 /* CDRestaurant+CoreDataClass.swift in Sources */,
 				3321DB8B1E01443D008002B3 /* Directory.swift in Sources */,
+				330E51E41E27CEB300DF10B8 /* CDRestaurant+CoreDataProperties.swift in Sources */,
 				33AA05491E02E41300EDE67B /* RestoDetailsViewController.swift in Sources */,
 				33AA054B1E02F7CD00EDE67B /* Constants.swift in Sources */,
 			);
@@ -251,6 +263,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -301,6 +314,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -378,6 +392,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		338A9DD81E27C13D00AB9B78 /* WhereToEat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				338A9DD91E27C13D00AB9B78 /* WhereToEat.xcdatamodel */,
+			);
+			currentVersion = 338A9DD91E27C13D00AB9B78 /* WhereToEat.xcdatamodel */;
+			path = WhereToEat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3321DB6D1E0141F6008002B3 /* Project object */;
 }
