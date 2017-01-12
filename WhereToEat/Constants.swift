@@ -10,4 +10,8 @@ struct Constants {
     struct NotificationNames {
         static let modelUpdated = "ModelUpdatedNotificationName"
     }
+    
+    struct UserDefaultsKeys {
+        static let lastResto = "LastRestoDefaultKey"
+    }
 }

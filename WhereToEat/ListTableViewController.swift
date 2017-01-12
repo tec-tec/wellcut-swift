@@ -30,6 +30,10 @@ class ListTableViewController: UITableViewController {
 //        notCenter.addObserver(forName: Notification.Name("modelUpdated"), object: nil, queue: nil) { (note) in
 //            weakSelf?.tableView.reloadData()
 //        }
+        
+        let prefs = UserDefaults.standard
+        guard let lastResto = prefs.string(forKey: Constants.UserDefaultsKeys.lastResto) else { return }
+        print(lastResto)
     }
     
     func reload() {
