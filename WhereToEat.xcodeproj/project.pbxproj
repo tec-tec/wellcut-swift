@@ -17,6 +17,7 @@
 		3321DB8D1E014449008002B3 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3321DB8C1E014449008002B3 /* Restaurant.swift */; };
 		33344ECE1E01A1B800779CF3 /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33344ECD1E01A1B800779CF3 /* CommonExtensions.swift */; };
 		33344ED01E02B0AE00779CF3 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33344ECF1E02B0AE00779CF3 /* ListTableViewController.swift */; };
+		338A9DB61E279EAE00AB9B78 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338A9DB51E279EAE00AB9B78 /* CloudKit.framework */; };
 		33AA05491E02E41300EDE67B /* RestoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AA05481E02E41300EDE67B /* RestoDetailsViewController.swift */; };
 		33AA054B1E02F7CD00EDE67B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AA054A1E02F7CD00EDE67B /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,8 @@
 		3321DB8C1E014449008002B3 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		33344ECD1E01A1B800779CF3 /* CommonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtensions.swift; sourceTree = "<group>"; };
 		33344ECF1E02B0AE00779CF3 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		338A9DB41E279E9E00AB9B78 /* WhereToEat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhereToEat.entitlements; sourceTree = "<group>"; };
+		338A9DB51E279EAE00AB9B78 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		33AA05481E02E41300EDE67B /* RestoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoDetailsViewController.swift; sourceTree = "<group>"; };
 		33AA054A1E02F7CD00EDE67B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33141DC21E03045800602B1B /* MapKit.framework in Frameworks */,
+				338A9DB61E279EAE00AB9B78 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,7 @@
 		33141DC01E03045800602B1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				338A9DB51E279EAE00AB9B78 /* CloudKit.framework */,
 				33141DC11E03045800602B1B /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -78,6 +83,7 @@
 		3321DB771E0141F6008002B3 /* WhereToEat */ = {
 			isa = PBXGroup;
 			children = (
+				338A9DB41E279E9E00AB9B78 /* WhereToEat.entitlements */,
 				3321DB781E0141F6008002B3 /* AppDelegate.swift */,
 				33344ECD1E01A1B800779CF3 /* CommonExtensions.swift */,
 				33AA054A1E02F7CD00EDE67B /* Constants.swift */,
@@ -146,6 +152,12 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -318,8 +330,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WhereToEat/WhereToEat.entitlements;
 				DEVELOPMENT_TEAM = A7SGM6JEMA;
 				INFOPLIST_FILE = WhereToEat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tectec.WhereToEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -331,8 +345,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WhereToEat/WhereToEat.entitlements;
 				DEVELOPMENT_TEAM = A7SGM6JEMA;
 				INFOPLIST_FILE = WhereToEat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tectec.WhereToEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";

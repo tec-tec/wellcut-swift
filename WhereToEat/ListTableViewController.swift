@@ -12,10 +12,6 @@ class ListTableViewController: UITableViewController {
 
     var directory: Directory = {
         let d = Directory.shared
-        for i in 0...10 {
-            let r = Restaurant(name: "Resto \(i)", address: "Adresse \(i)")
-            d.add(r)
-        }
         return d
     }()
     
