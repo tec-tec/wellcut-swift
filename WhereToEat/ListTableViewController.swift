@@ -36,6 +36,13 @@ class ListTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
+    @IBAction func showRandomResto(_ sender: Any) {
+        guard let r = directory.randomRestaurant, let controller = storyboard?.instantiateViewController(withIdentifier: "RestoDetailsViewController") as? RestoDetailsViewController else { return }
+        
+        controller.displayedRestaurant = r
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

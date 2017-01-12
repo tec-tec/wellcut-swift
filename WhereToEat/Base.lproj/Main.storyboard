@@ -64,6 +64,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Restos" id="eWO-nh-HCW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="fastForward" id="ObQ-4Y-Occ">
+                            <connections>
+                                <action selector="showRandomResto:" destination="zJp-CB-Fp1" id="lyR-1d-LmR"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="n7I-Hc-PzW">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" identifier="showForm" id="vld-Yt-fUm"/>
@@ -319,7 +324,7 @@
         <!--Resto Details View Controller-->
         <scene sceneID="dJL-ra-mMq">
             <objects>
-                <viewController id="sVx-fD-qtO" customClass="RestoDetailsViewController" customModule="WhereToEat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RestoDetailsViewController" id="sVx-fD-qtO" customClass="RestoDetailsViewController" customModule="WhereToEat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zmh-zx-tTR"/>
                         <viewControllerLayoutGuide type="bottom" id="CCx-UQ-iLv"/>
