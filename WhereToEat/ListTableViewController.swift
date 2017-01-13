@@ -30,6 +30,22 @@ class ListTableViewController: UITableViewController {
         let prefs = UserDefaults.standard
         guard let lastResto = prefs.string(forKey: Constants.UserDefaultsKeys.lastResto) else { return }
         print(lastResto)
+        
+        DispatchQueue.global(qos: .utility).async {
+            for i in 0...5000000000 {
+                let a = i+1
+            }
+            
+            DispatchQueue.main.async {
+                self.navigationController?.navigationBar.barTintColor = UIColor.red
+            }
+        }
+        
+        DispatchQueue.global(qos: .utility).async {
+            for i in 0...5000000000 {
+                let a = i+1
+            }
+        }
     }
     
     func reload() {
