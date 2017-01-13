@@ -118,7 +118,7 @@
                                 <rect key="frame" x="0.0" y="58" width="375" height="609"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3oi-hT-LP0">
-                                        <rect key="frame" x="8" y="0.0" width="359" height="579.5"/>
+                                        <rect key="frame" x="8" y="0.0" width="359" height="617.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CbC-oc-duO">
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="58.5"/>
@@ -139,7 +139,7 @@
                                                 <variation key="heightClass=compact" axis="horizontal"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tb8-5t-hvH">
-                                                <rect key="frame" x="0.0" y="66.5" width="359" height="58.5"/>
+                                                <rect key="frame" x="0.0" y="66.5" width="359" height="96.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zP6-wI-VVs">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
@@ -153,11 +153,18 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvU-kW-DAN">
+                                                        <rect key="frame" x="0.0" y="66.5" width="359" height="30"/>
+                                                        <state key="normal" title="J'y suis…"/>
+                                                        <connections>
+                                                            <action selector="requestCurrentAddress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UZg-Tc-2oz"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <variation key="heightClass=compact" axis="horizontal"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wUt-Yu-WUA">
-                                                <rect key="frame" x="0.0" y="133" width="359" height="58.5"/>
+                                                <rect key="frame" x="0.0" y="171" width="359" height="58.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijA-uz-Yif">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
@@ -175,7 +182,7 @@
                                                 <variation key="heightClass=compact" axis="horizontal"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zCt-v7-9B7">
-                                                <rect key="frame" x="0.0" y="199.5" width="359" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="237.5" width="359" height="59.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already visited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXE-Kb-6g7">
                                                         <rect key="frame" x="0.0" y="0.0" width="112.5" height="20.5"/>
@@ -193,7 +200,7 @@
                                                 <variation key="heightClass=compact" alignment="center" axis="horizontal"/>
                                             </stackView>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="38D-Tf-kGv">
-                                                <rect key="frame" x="0.0" y="267" width="359" height="58.5"/>
+                                                <rect key="frame" x="0.0" y="305" width="359" height="58.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4M-TT-QCA">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
@@ -225,7 +232,7 @@
                                                 <variation key="heightClass=compact" axis="horizontal"/>
                                             </stackView>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lOp-yB-uvl">
-                                                <rect key="frame" x="0.0" y="333.5" width="359" height="246"/>
+                                                <rect key="frame" x="0.0" y="371.5" width="359" height="246"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4CG-X2-q4k">
                                                         <rect key="frame" x="0.0" y="0.0" width="194" height="30"/>

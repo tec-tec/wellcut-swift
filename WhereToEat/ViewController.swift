@@ -119,6 +119,9 @@ class ViewController: UIViewController {
     @IBAction func scrollViewTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(false)
     }
+    
+    @IBAction func requestCurrentAddress(_ sender: Any) {
+    }
 }
 
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
