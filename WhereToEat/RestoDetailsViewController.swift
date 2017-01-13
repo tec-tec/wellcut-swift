@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class RestoDetailsViewController: UIViewController {
 
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
     
     var displayedRestaurant: Restaurant?
     
@@ -27,6 +29,14 @@ class RestoDetailsViewController: UIViewController {
         let prefs = UserDefaults.standard
         prefs.set(displayedRestaurant?.name, forKey: Constants.UserDefaultsKeys.lastResto)
         displayedRestaurant?.saveToDisk(data: Data())
+        
+        if let lat = resto.latitude, let long = resto.longitude {
+            let coordinates = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinates
+            annotation.title = resto.name
+            mapView.addAnnotation(annotation)
+        }
     }
 
     override func didReceiveMemoryWarning() {

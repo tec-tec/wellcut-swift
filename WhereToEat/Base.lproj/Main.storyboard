@@ -371,6 +371,7 @@
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="kfT-G0-KSP" id="aWg-pA-FVk"/>
+                        <outlet property="mapView" destination="2rI-eu-ASe" id="o35-ka-md2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYe-dL-Bt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
