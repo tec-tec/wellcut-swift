@@ -13,21 +13,12 @@ class Directory {
     
     static let shared = Directory()
     
-    private var restaurants: [Restaurant]
-    
-    private init() {
-        
-        restaurants = []
-    }
-    
     func add(_ resto: Restaurant) {
-        restaurants.append(resto)
+        _ = CDRestaurant(resto: resto, context: persistentContainer.viewContext)
+        saveContext()
         
         let notifCenter = NotificationCenter.default
         notifCenter.post(name: Notification.Name(Constants.NotificationNames.modelUpdated), object: nil)
-        
-        _ = CDRestaurant(resto: resto, context: persistentContainer.viewContext)
-        saveContext()
     }
     
     func remove(_ resto: Restaurant) {
