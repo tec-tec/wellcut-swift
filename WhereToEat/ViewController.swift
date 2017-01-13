@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var lastVisitDateButton: UIButton!
     @IBOutlet weak var lastVisitStackView: UIStackView!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     var directory = Directory.shared
     private var lastVisit: Date?
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
         return df
     }()
     lazy private var locationManager = CLLocationManager()
+    fileprivate var location: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +71,12 @@ class ViewController: UIViewController {
         if alreadyVisitedSwitch.isOn {
             resto.grade = gradeSlider.value
         }
+        
+        if let coord = location {
+            resto.latitude = coord.latitude
+            resto.longitude = coord.longitude
+        }
+        
         return resto
     }
 
@@ -136,6 +144,7 @@ class ViewController: UIViewController {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestLocation()
+        loader.startAnimating()
     }
 }
 
@@ -160,10 +169,18 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations)
+        loader.stopAnimating()
+        guard let lastPosition = locations.last else { return }
+        self.location = lastPosition.coordinate
+        CLGeocoder().reverseGeocodeLocation(lastPosition) { (placemarks, error) in
+            guard error == nil, let place = placemarks?.first else { return }
+            self.addressTextField.text = (place.subThoroughfare ?? "") + " " + (place.thoroughfare ?? "") + ", " + (place.locality ?? "")
+            print(place)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
+        loader.stopAnimating()
     }
 }
