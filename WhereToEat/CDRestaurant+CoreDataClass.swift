@@ -25,4 +25,16 @@ public class CDRestaurant: NSManagedObject {
         guard let name = name, let address = address else { return nil }
         return Restaurant(name: name, address: address)
     }
+    
+/* We can use this subclass to add custom actions during object lifecycle
+ 
+    public override func willSave() {
+        super.willSave()
+    }
+    
+    public override func prepareForDeletion() {
+        super.prepareForDeletion()
+    }
+*/
+    
 }
