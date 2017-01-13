@@ -16,6 +16,8 @@ public class CDRestaurant: NSManagedObject {
         self.init(context: context)
         self.name = resto.name
         self.address = resto.address
+        self.latitude = resto.latitude ?? 0
+        self.longitude = resto.longitude ?? 0
         if let mediumPrice = resto.mediumPrice {
             self.mediumPrice = Int16(mediumPrice)
         }
@@ -23,7 +25,12 @@ public class CDRestaurant: NSManagedObject {
     
     var restaurantStruct: Restaurant? {
         guard let name = name, let address = address else { return nil }
-        return Restaurant(name: name, address: address)
+        var resto = Restaurant(name: name, address: address)
+        if latitude != 0 && longitude != 0 {
+            resto.latitude = latitude
+            resto.longitude = longitude
+        }
+        return resto
     }
     
 /* We can use this subclass to add custom actions during object lifecycle

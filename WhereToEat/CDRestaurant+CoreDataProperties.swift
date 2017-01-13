@@ -2,7 +2,7 @@
 //  CDRestaurant+CoreDataProperties.swift
 //  WhereToEat
 //
-//  Created by Ludovic Ollagnier on 12/01/2017.
+//  Created by Ludovic Ollagnier on 13/01/2017.
 //  Copyright © 2017 Ludovic Ollagnier. All rights reserved.
 //
 
@@ -19,5 +19,7 @@ extension CDRestaurant {
     @NSManaged public var address: String?
     @NSManaged public var mediumPrice: Int16
     @NSManaged public var name: String?
+    @NSManaged public var latitude: Double
+    @NSManaged public var longitude: Double
 
 }

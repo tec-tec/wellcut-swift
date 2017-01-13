@@ -33,6 +33,8 @@ struct Restaurant {
     let style: Style?
     var grade: Float?
     var mediumPrice: Int?
+    var latitude: Double?
+    var longitude: Double?
     var specificities: Set<Specificities>
     
     var openingHours: [WeekDay : [OpeningHours]]
