@@ -61,6 +61,10 @@ class Directory {
          error conditions that could cause the creation of the store to fail.
          */
         let container = NSPersistentContainer(name: "WhereToEat")
+        if let url = self.coreDataStorageDirectoryURL {
+            let storeDesc = NSPersistentStoreDescription(url: url)
+            container.persistentStoreDescriptions = [storeDesc]
+        }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -79,6 +83,12 @@ class Directory {
         })
         return container
     }()
+    
+    private var coreDataStorageDirectoryURL: URL? {
+        var url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.tectec.training.wellcut.wheretoeat")
+        url?.appendPathComponent("/CoreData/Data.sqlite")
+        return url
+    }
     
     // MARK: - Core Data Saving support
     
