@@ -44,6 +44,15 @@ class RestoDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func share(_ sender: UIBarButtonItem) {
+        
+        let shareVC = UIActivityViewController(activityItems: ["Some data to share", "This can be images or videos"], applicationActivities: nil)
+        shareVC.popoverPresentationController?.barButtonItem = sender
+        shareVC.completionWithItemsHandler = { (activity, completed, returns, error) in
+            //Do what relevant if completed or cancelled, or in case of error
+        }
+        present(shareVC, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
