@@ -32,7 +32,7 @@ class ListTableViewController: UITableViewController {
         print(lastResto)
         
         DispatchQueue.global(qos: .utility).async {
-            for i in 0...5000000000 {
+            for i in 0...500000000 {
                 let a = i+1
             }
             
@@ -42,7 +42,7 @@ class ListTableViewController: UITableViewController {
         }
         
         DispatchQueue.global(qos: .utility).async {
-            for i in 0...5000000000 {
+            for i in 0...500000000 {
                 let a = i+1
             }
         }
