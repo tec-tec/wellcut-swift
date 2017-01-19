@@ -32,12 +32,6 @@ class WhereToEatUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         XCUIApplication().navigationBars["Restos"].buttons["Add"].tap()
-        
-        let app = XCUIApplication()
-        app.scrollViews.children(matching: .other).element.children(matching: .other).element(boundBy: 0).children(matching: .textField).element.typeText("sgbdb")
-        app.buttons["Save"].tap()
-        
-        
     }
     
 }
