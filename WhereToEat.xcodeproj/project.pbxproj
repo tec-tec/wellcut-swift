@@ -95,6 +95,7 @@
 		3314984C1E315F3000206E5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		3314984E1E315F3000206E5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		331498501E315F3000206E5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3314985D1E3163BE00206E5A /* MessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessagesExtension.entitlements; sourceTree = "<group>"; };
 		3321DB751E0141F6008002B3 /* WhereToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3321DB781E0141F6008002B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3321DB7A1E0141F6008002B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 		331498481E315F3000206E5A /* MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				3314985D1E3163BE00206E5A /* MessagesExtension.entitlements */,
 				331498491E315F3000206E5A /* MessagesViewController.swift */,
 				3314984B1E315F3000206E5A /* MainInterface.storyboard */,
 				3314984E1E315F3000206E5A /* Assets.xcassets */,
@@ -381,12 +383,20 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = A7SGM6JEMA;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3321DB741E0141F6008002B3 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = A7SGM6JEMA;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -652,6 +662,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = MessagesExtension/MessagesExtension.entitlements;
 				DEVELOPMENT_TEAM = A7SGM6JEMA;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
@@ -667,6 +678,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = MessagesExtension/MessagesExtension.entitlements;
 				DEVELOPMENT_TEAM = A7SGM6JEMA;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
