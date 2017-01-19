@@ -68,5 +68,24 @@ class MessagesViewController: MSMessagesAppViewController {
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
+}
 
+extension MessagesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedResto = Directory.shared.allRestaurants[indexPath.row]
+        
+        let layout = MSMessageTemplateLayout()
+        layout.image = UIImage(named: "resto")
+        layout.imageTitle = selectedResto.name
+        layout.caption = selectedResto.address
+//        layout.mediaFileURL = URL(string: "https://youtu.be/iPG1Xa5Uqwo")
+        
+        let message = MSMessage()
+        message.shouldExpire = false
+        message.layout = layout
+        
+        activeConversation?.insert(message, completionHandler: nil)
+    }
 }
