@@ -26,7 +26,7 @@ class RestoTableViewDataProvider: NSObject, UITableViewDataSource {
             if indexPath.row == 10 {
                 cell.backgroundColor = UIColor.red
             } else {
-                cell.backgroundColor = UIColor.wellcutYellow
+                cell.backgroundColor = UIColor.white
             }
             cell.textLabel?.text = directory.allRestaurants[indexPath.row].name
             cell.detailTextLabel?.text = directory.allRestaurants[indexPath.row].address

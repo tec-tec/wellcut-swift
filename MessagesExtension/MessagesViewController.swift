@@ -11,6 +11,9 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var selectedRestoView: SelectedRestoView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -61,13 +64,62 @@ class MessagesViewController: MSMessagesAppViewController {
         // Called before the extension transitions to a new presentation style.
     
         // Use this method to prepare for the change in presentation style.
+        print("will transition")
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         // Called after the extension transitions to a new presentation style.
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
+        print(activeConversation)
+        print(activeConversation?.selectedMessage)
     }
+    
+    override func didSelect(_ message: MSMessage, conversation: MSConversation) {
+        guard let url = activeConversation?.selectedMessage?.url, let components = URLComponents(url: url, resolvingAgainstBaseURL: false), let items = components.queryItems, let rest = restaurant(from: items) else { return }
+
+        selectedRestoView.configure(with: rest)
+        tableView.tableHeaderView = selectedRestoView
+}
+    
+    @IBAction func showDetailForSelectedResto(_ sender: Any) {
+        displayDetails()
+    }
+    
+    private func restaurant(from queryItems: [URLQueryItem]) -> Restaurant? {
+        
+        var name: String?
+        var adress: String?
+        var style: Restaurant.Style?
+        
+        for i in queryItems {
+            switch i.name {
+            case "name":
+                name = i.value
+            case "address":
+                adress = i.value
+            case "style":
+                style = Restaurant.Style(rawValue: i.value ?? "")
+            default:
+                ()
+            }
+        }
+        
+        guard let a = adress, let n = name else { return nil }
+        return Restaurant(name: a, address: n, style: style, grade: nil, mediumPrice: nil, specificities: [], openingHours: [:], lastVisit: nil)
+    }
+    
+    private func displayDetails() {
+        guard let url = activeConversation?.selectedMessage?.url, let components = URLComponents(url: url, resolvingAgainstBaseURL: false), let items = components.queryItems else { return }
+        
+        guard let rest = restaurant(from: items) else { return }
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "MessageDetailViewController") as? MessageDetailViewController else { return }
+        vc.selectedRestaurant = rest
+        
+        present(vc, animated: true, completion: nil)
+    }
+    
 }
 
 extension MessagesViewController: UITableViewDelegate {
@@ -78,14 +130,34 @@ extension MessagesViewController: UITableViewDelegate {
         
         let layout = MSMessageTemplateLayout()
         layout.image = UIImage(named: "resto")
-        layout.imageTitle = selectedResto.name
-        layout.caption = selectedResto.address
-//        layout.mediaFileURL = URL(string: "https://youtu.be/iPG1Xa5Uqwo")
+        layout.caption = selectedResto.name
+        layout.subcaption = selectedResto.address
+        layout.trailingSubcaption = selectedResto.style?.rawValue
         
         let message = MSMessage()
         message.shouldExpire = false
         message.layout = layout
         
+        var components = URLComponents()
+        let addressItem = URLQueryItem(name: "address", value: selectedResto.address)
+        let nameItem = URLQueryItem(name: "name", value: selectedResto.name)
+        let styleItem = URLQueryItem(name: "style", value: selectedResto.style?.rawValue)
+        components.queryItems = [nameItem, addressItem, styleItem]
+        message.url = components.url
+        
+        requestPresentationStyle(.compact)
         activeConversation?.insert(message, completionHandler: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+class SelectedRestoView: UIView {
+    
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var address: UILabel!
+    
+    func configure(with resto: Restaurant) {
+        name.text = resto.name
+        address.text = resto.address
     }
 }

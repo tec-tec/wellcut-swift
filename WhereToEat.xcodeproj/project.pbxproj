@@ -27,6 +27,7 @@
 		331498601E316AB300206E5A /* RestoTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3314985F1E316AB300206E5A /* RestoTableViewDataProvider.swift */; };
 		331498611E316AB300206E5A /* RestoTableViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3314985F1E316AB300206E5A /* RestoTableViewDataProvider.swift */; };
 		331498621E316B2900206E5A /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33344ECD1E01A1B800779CF3 /* CommonExtensions.swift */; };
+		331498651E324B0800206E5A /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331498631E324B0800206E5A /* MessageDetailViewController.swift */; };
 		3321DB791E0141F6008002B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3321DB781E0141F6008002B3 /* AppDelegate.swift */; };
 		3321DB7B1E0141F6008002B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3321DB7A1E0141F6008002B3 /* ViewController.swift */; };
 		3321DB7E1E0141F6008002B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3321DB7C1E0141F6008002B3 /* Main.storyboard */; };
@@ -101,6 +102,7 @@
 		331498501E315F3000206E5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3314985D1E3163BE00206E5A /* MessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessagesExtension.entitlements; sourceTree = "<group>"; };
 		3314985F1E316AB300206E5A /* RestoTableViewDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoTableViewDataProvider.swift; sourceTree = "<group>"; };
+		331498631E324B0800206E5A /* MessageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		3321DB751E0141F6008002B3 /* WhereToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3321DB781E0141F6008002B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3321DB7A1E0141F6008002B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				3314985D1E3163BE00206E5A /* MessagesExtension.entitlements */,
 				331498491E315F3000206E5A /* MessagesViewController.swift */,
 				3314984B1E315F3000206E5A /* MainInterface.storyboard */,
+				331498631E324B0800206E5A /* MessageDetailViewController.swift */,
 				3314984E1E315F3000206E5A /* Assets.xcassets */,
 				331498501E315F3000206E5A /* Info.plist */,
 			);
@@ -510,6 +513,7 @@
 				331498581E31607100206E5A /* CDRestaurant+CoreDataClass.swift in Sources */,
 				3314985E1E31657200206E5A /* Constants.swift in Sources */,
 				3314984A1E315F3000206E5A /* MessagesViewController.swift in Sources */,
+				331498651E324B0800206E5A /* MessageDetailViewController.swift in Sources */,
 				331498621E316B2900206E5A /* CommonExtensions.swift in Sources */,
 				3314985A1E31607B00206E5A /* Directory.swift in Sources */,
 			);

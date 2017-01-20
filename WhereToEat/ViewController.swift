@@ -174,7 +174,7 @@ extension ViewController: CLLocationManagerDelegate {
         self.location = lastPosition.coordinate
         CLGeocoder().reverseGeocodeLocation(lastPosition) { (placemarks, error) in
             guard error == nil, let place = placemarks?.first else { return }
-            self.addressTextField.text = (place.subThoroughfare ?? "") + " " + (place.thoroughfare ?? "") + ", " + (place.locality ?? "")
+            self.addressTextField.text = (place.subThoroughfare ?? "") + " " + (place.thoroughfare ?? "") + ", " + (place.locality ?? "") + ", " + (place.country ?? "")
             print(place)
         }
     }
